@@ -21,3 +21,14 @@ There are, however, some differences between Float16 and the OpenAI API. Open-so
 To achieve better performance from smaller model sizes, we encourage using techniques such as prompt engineering. We plan to provide more examples of prompt engineering in the future.
 
 Prompt engineering allows one to extract better performance from smaller model sizes. For instance, it's possible to achieve better performance with the 7b model than with the 13b or 70b models.
+
+## FAQ
+- **Which prompt engineer techniques are used in this project ?**
+We have used the following prompt engineering techniques in this project:
+  - Few-shot learning
+  - Chain of Thought (CoT)
+  - Tree of Thought (ToT)
+  - Reason + Act (ReACT)
+
+- **How do I use Float16?**
+You can use Float16 by visiting [Float16.Cloud](https://float16.cloud). Register and get your API key. You can then use the API key to access the models.
