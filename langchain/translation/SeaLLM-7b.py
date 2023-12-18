@@ -8,9 +8,9 @@ import json
 import dotenv 
 import os
 dotenv.load_dotenv()
-FLOAT16_BASE_URL = os.getenv("FLOAT16_BASE_URL")
-FLOAT16_API_KEY = os.getenv("FLOAT16_API_KEY")
-FLOAT16_CUSTOM_URL = os.getenv("FLOAT16_CUSTOM_URL")
+FLOAT16_BASE_URL = os.getenv("FLOAT16_BASE_URL") #'https://api.float16.cloud/v1.1/"
+FLOAT16_CUSTOM_URL = os.getenv("FLOAT16_CUSTOM_URL") #'https://api.float16.cloud/v1.1/chat/completions'
+FLOAT16_API_KEY = os.getenv("FLOAT16_API_KEY") 
 
 model = ChatOpenAI(
     model="seallm-7b",
