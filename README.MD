@@ -6,8 +6,8 @@ We have included a few examples to help you get started with Float16.
 
 ## Latest News
 - [2023-12-18] Added an example for Langchain.
-  - Text Summarization. []()
-  - Machine Translation. []()
+  - [Text Summarization.](https://github.com/vultureprime/Float16-example/tree/main/langchain/summarize)
+  - [Machine Translation.](https://github.com/vultureprime/Float16-example/tree/main/langchain/translation)
 
 ## How to use this project
 You can visit other directories to see how to use Float16 with various models.
