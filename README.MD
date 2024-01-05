@@ -5,6 +5,9 @@ This is an example project for [Float16](https://float16.cloud)
 We have included a few examples to help you get started with Float16.
 
 ## Latest News
+- [2024-01-05] Added an example for LlamaIndex.
+  - [RAG](https://github.com/vultureprime/Float16-example/tree/main/llamaindex/RAG)
+  
 - [2023-12-18] Added an example for Langchain.
   - [Text Summarization.](https://github.com/vultureprime/Float16-example/tree/main/langchain/summarize)
   - [Machine Translation.](https://github.com/vultureprime/Float16-example/tree/main/langchain/translation)
