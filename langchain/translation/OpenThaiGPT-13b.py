@@ -13,7 +13,7 @@ FLOAT16_CUSTOM_URL = os.getenv("FLOAT16_CUSTOM_URL") #'https://api.float16.cloud
 FLOAT16_API_KEY = os.getenv("FLOAT16_API_KEY") 
 
 model = ChatOpenAI(
-    model="seallm-7b",
+    model="OpenThaiGPT-13b",
     api_key=FLOAT16_API_KEY,
     base_url=FLOAT16_BASE_URL,
     max_tokens=256,
@@ -23,7 +23,7 @@ model = ChatOpenAI(
     }
 )
 prompt = ChatPromptTemplate.from_messages([
-    ("system", """You are translator Thai to English."""), 
+    ("system", """You are translator Thai to English. You will receive text in Thai language and output English language. no explanation. no extra words. DO NOT try to asnwer the question."""), 
     ("human", "Original : คุณอายุเท่าไหร่ ?"),
     ("ai", "Translated : How old are you ?"),
     ("human", "Original : คุณชื่ออะไร ?"),
@@ -52,12 +52,14 @@ chain = prompt | model | output_parser
 #use endpoint v1 for stop word </s>, v1.1 for stop word "\n", v1.2 for stop word "."
 
 start = time.time()
-res = chain.invoke({'input' : "Original : สำหรับบทความสุดท้ายของแคมเปญนี้ ก็ยังคงเป็นเรื่องราวเกี่ยวกับ Chatbot เช่นเคย แต่จะมีความซับซ้อนยิ่งกว่า วันนี้เราจะมาทำ Chatbot with RAG and Agents เพื่อช่วยให้ Chatbot ของเราสามารถตอบคำถามได้ดียิ่งขึ้นและถูกต้องกว่าเดิม ถ้าพร้อมแล้ว เรามาเริ่มกันเลยค่ะ!"})
-res = chain.invoke({'input' : """Original : สำหรับพาร์ทของ Chat Agent เราก็ได้เลือกใช้ OpenAI มาเป็น LLMs ที่ทำหน้าที่ในส่วนนี้ หน้าที่ของ Chat Agent มี 2 อย่างคือตัดสินใจว่าใช้ข้อมูลจากฝั่งไหนเอามาใช้ตอบคำถาม ซึ่งประกอบด้วย Chat Engine, Sub Question Engine และ RAG Engine"""})
-res = chain.invoke({'input' : """Original : ในปัจจุบันนี้มีการนำ AI มาใช้ในหลายๆอย่าง ซึ่ง Q&A Document ถ้าเราจินตนาการว่าโปรเจ็คเป็นยังไง สิ่งแรกที่เรานึกก็คงนึก OpenAI กัน หรือ บางคนอาจจะนึง Chat Bot เจ้าต่างๆ ที่เราถามคำถามไปเเล้วเจ้า Chat bot ก็จะตอบคำถามกลับมา ซึ่งตัวQ&A Document นี้ เราจะโยนตัว Document ไป ให้ Chat bot ของเราเเล้วหลังจากนั้นเราก็ถาม เจ้า Chat bot ก็จะตอบกลับ"""})
-res = chain.invoke({'input' : """Original : Documentation Section : สร้างส่วนของเอกสารหรือคำแนะนำที่ช่วยให้ผู้ใช้ใหม่สามารถทำความเข้าใจได้ว่า RAG Retrieval Augmented Generation คืออะไรและทำงานอย่างไร"""})
-res = chain.invoke({'input' : """Original : ขั้นตอนการใช้งานทีละขั้นตอนหรือวิดีโอสอนการใช้งานสำหรับผู้ที่เริ่มต้นใช้งาน"""})
-res = chain.invoke({'input' : """Original : อาหารเช้ามีอะไรบ้าง"""})
+# res = chain.invoke({'input' : "Original : สำหรับบทความสุดท้ายของแคมเปญนี้ ก็ยังคงเป็นเรื่องราวเกี่ยวกับ Chatbot เช่นเคย แต่จะมีความซับซ้อนยิ่งกว่า วันนี้เราจะมาทำ Chatbot with RAG and Agents เพื่อช่วยให้ Chatbot ของเราสามารถตอบคำถามได้ดียิ่งขึ้นและถูกต้องกว่าเดิม ถ้าพร้อมแล้ว เรามาเริ่มกันเลยค่ะ!"})
+# res = chain.invoke({'input' : """Original : สำหรับพาร์ทของ Chat Agent เราก็ได้เลือกใช้ OpenAI มาเป็น LLMs ที่ทำหน้าที่ในส่วนนี้ 
+#                     หน้าที่ของ Chat Agent มี 2 อย่างคือตัดสินใจว่าใช้ข้อมูลจากฝั่งไหนเอามาใช้ตอบคำถาม ซึ่งประกอบด้วย Chat Engine, 
+#                     Sub Question Engine และ RAG Engine"""})
+# res = chain.invoke({'input' : """Original : ในปัจจุบันนี้มีการนำ AI มาใช้ในหลายๆอย่าง ซึ่ง Q&A Document ถ้าเราจินตนาการว่าโปรเจ็คเป็นยังไง สิ่งแรกที่เรานึกก็คงนึก OpenAI กัน หรือ บางคนอาจจะนึง Chat Bot เจ้าต่างๆ ที่เราถามคำถามไปเเล้วเจ้า Chat bot ก็จะตอบคำถามกลับมา ซึ่งตัวQ&A Document นี้ เราจะโยนตัว Document ไป ให้ Chat bot ของเราเเล้วหลังจากนั้นเราก็ถาม เจ้า Chat bot ก็จะตอบกลับ"""})
+# res = chain.invoke({'input' : """Original : Documentation Section: สร้างส่วนของเอกสารหรือคำแนะนำที่ช่วยให้ผู้ใช้ใหม่สามารถทำความเข้าใจได้ว่า RAG (Retrieval Augmented Generation) คืออะไรและทำงานอย่างไร"""})
+# res = chain.invoke({'input' : """Original : ขั้นตอนการใช้งานทีละขั้นตอนหรือวิดีโอสอนการใช้งานสำหรับผู้ที่เริ่มต้นใช้งาน"""})
+res = chain.invoke({'input' : """Original : ตั้งแต่ขั้นวางแผน การใช้ Keyword และงบประมาณ Bid Strategy ไปจนวัดผล Conversions """})
 print(res)
 print('Synchronus chain total time : {}'.format(time.time() - start))
 
@@ -68,12 +70,11 @@ print('Synchronus chain total time : {}'.format(time.time() - start))
 #     'Original : สำหรับพาร์ทของ Chat Agent เราก็ได้เลือกใช้ OpenAI มาเป็น LLMs ที่ทำหน้าที่ในส่วนนี้หน้าที่ของ Chat Agent มี 2 อย่างคือตัดสินใจว่าใช้ข้อมูลจากฝั่งไหนเอามาใช้ตอบคำถาม ซึ่งประกอบด้วย Chat Engine,Sub Question Engine และ RAG Engine',
 #     'Original : ในปัจจุบันนี้มีการนำ AI มาใช้ในหลายๆอย่าง ซึ่ง Q&A Document ถ้าเราจินตนาการว่าโปรเจ็คเป็นยังไง สิ่งแรกที่เรานึกก็คงนึก OpenAI กัน หรือ บางคนอาจจะนึง Chat Bot เจ้าต่างๆ ที่เราถามคำถามไปเเล้วเจ้า Chat bot ก็จะตอบคำถามกลับมา ซึ่งตัวQ&A Document นี้ เราจะโยนตัว Document ไป ให้ Chat bot ของเราเเล้วหลังจากนั้นเราก็ถาม เจ้า Chat bot ก็จะตอบกลับ',
 #     'Original : Documentation Section: สร้างส่วนของเอกสารหรือคำแนะนำที่ช่วยให้ผู้ใช้ใหม่สามารถทำความเข้าใจได้ว่า RAG (Retrieval Augmented Generation) คืออะไรและทำงานอย่างไร',
-#     'Original : ขั้นตอนการใช้งานทีละขั้นตอนหรือวิดีโอสอนการใช้งานสำหรับผู้ที่เริ่มต้นใช้งาน',
-#     """Original : อาหารเช้ามีอะไรบ้าง"""
+#     'Original : ขั้นตอนการใช้งานทีละขั้นตอนหรือวิดีโอสอนการใช้งานสำหรับผู้ที่เริ่มต้นใช้งาน'
 # ]
 
 # async def do_request(url, data):
-#     headers = {'content-type': 'application/json','Authorization': 'Bearer '+FLOAT16_API_KEY}
+#     headers = {'content-type': 'application/json'}
 #     start = time.perf_counter()  # start time
 #     async with aiohttp.ClientSession(trust_env=True) as session:
 #         async with session.post(url, headers=headers, data=json.dumps(data)) as response:
