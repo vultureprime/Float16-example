@@ -3,4 +3,4 @@
 [Float16.cloud](https://float16.cloud)
 
 # Youtube playlist 
-[YouTube]()
+[YouTube](https://www.youtube.com/playlist?list=PLcaP7svhJ2PDm103bXwRMMybkwKYpHva8)
