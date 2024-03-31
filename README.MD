@@ -5,6 +5,9 @@ This is an example project for [Float16](https://float16.cloud)
 We have included a few examples to help you get started with Float16.
 
 ## Latest News
+- [2024-03-31] Added an example for Bare-metal request.
+  - [TexttoSQL](https://github.com/vultureprime/Float16-example/tree/main/bare_metal/TexttoSQL)
+
 - [2024-03-05] Added an basic tutorial for LlamaIndex.
   - [Basic](https://github.com/vultureprime/Float16-example/tree/main/llamaindex/Basic)
 

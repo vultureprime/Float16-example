@@ -1,6 +1,9 @@
 # Bare-metal example.
 
 ## Latest News
+- [2024-03-31] Added an example for Bare-metal request.
+  - [TexttoSQL](https://github.com/vultureprime/Float16-example/tree/main/bare_metal/TexttoSQL)
+
 - [2024-02-02] Added an example for Bare-metal request.
   - [Streaming](https://github.com/vultureprime/Float16-example/tree/main/bare_metal/Streaming)
 
