@@ -8,14 +8,17 @@ We have included a few examples to help you get started with Float16.
 | Model Name | Model Size | Description |
 |------------|------------|-------------|
 | OpenThaiGPT-70b | 70b | A Thai language model|
-| OpenThaiGPT-13b | 70b | A Thai language model|
-| OpenThaiGPT-7b | 70b | A Thai language model|
+| OpenThaiGPT-13b | 13b | A Thai language model|
+| OpenThaiGPT-7b | 7b | A Thai language model|
 | SQLCoder-7b-2 | 7b | A model for converting natural language to SQL queries|
 | SeaLLM-7b-v2 | 7b | A ASEAN languages model|
+| SeaLLM-7b-v2.5 | 7b | A ASEAN languages model|
 
 Pricing for each model is available on the [Float16.Cloud](https://float16.cloud) website.
 
 ## Latest News
+- [2024-04-15] Added brand new SeaLLM-7b-v2.5 model.
+
 - [2024-04-08] Added an example for Bare-metal request. (OpenThaiGPT-70b)
   - [SentimentAnalysis](https://github.com/vultureprime/Float16-example/tree/main/bare_metal/SentimentAnalysis)
 
