@@ -11,8 +11,8 @@ We have included a few examples to help you get started with Float16.
 | OpenThaiGPT-13b | 13b | A Thai language model|
 | OpenThaiGPT-7b | 7b | A Thai language model|
 | SQLCoder-7b-2 | 7b | A model for converting natural language to SQL queries|
-| SeaLLM-7b-v2 | 7b | A ASEAN languages model|
-| SeaLLM-7b-v2.5 | 7b | A ASEAN languages model|
+| SeaLLM-7b-v2 | 7b | A South East Asia (SEA) languages model|
+| SeaLLM-7b-v2.5 | 7b | A South East Asia (SEA) languages model|
 
 Pricing for each model is available on the [Float16.Cloud](https://float16.cloud) website.
 
